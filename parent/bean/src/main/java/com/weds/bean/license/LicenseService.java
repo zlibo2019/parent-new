@@ -4,14 +4,20 @@ import com.alibaba.fastjson.JSONObject;
 import com.weds.core.license.LicenseEntity;
 import com.weds.core.license.LicenseUtil;
 import com.weds.core.license.ServerIDGenerator;
+import com.weds.core.utils.coder.AESCoder;
+import org.apache.commons.codec.digest.DigestUtils;
+import sun.security.krb5.internal.crypto.Aes128;
 
 import javax.annotation.Resource;
+import java.io.File;
+import java.io.PrintWriter;
 import java.util.Arrays;
 
 public class LicenseService {
-
+    private static final String PRODUCT_NAME = "WEDS";
     @Resource
     private LicenseParams licenseParams;
+
 
     public LicenseEntity parseLicenseEntity() {
         LicenseEntity licenseEntity = null;
@@ -28,7 +34,18 @@ public class LicenseService {
         return licenseEntity;
     }
 
-    public boolean checkRight() {
+    public boolean checkRight(String pollCode) {
+        try{
+            String[] ids = ServerIDGenerator.make(PRODUCT_NAME);
+            String machineCode = ids[0];
+            String decryptMachineCode = AESCoder.decrypt(pollCode,"1234567890123zlb","0123456789012345");
+            return decryptMachineCode.equals(machineCode);
+        }
+        catch (Exception e){
+            return  false;
+        }
+
+
 //        LicenseEntity licenseEntity = parseLicenseEntity();
 //        if (licenseEntity != null) {
 //            String id = licenseEntity.getId()[0];

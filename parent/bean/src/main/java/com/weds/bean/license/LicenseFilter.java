@@ -58,14 +58,14 @@ public class LicenseFilter extends BaseFilter implements Filter {
             res.setStatus(HttpServletResponse.SC_ACCEPTED);
             return;
         }
-
+        licenseParams.setActive(true);
         if (licenseParams.isActive()) {
             String url = req.getRequestURI().substring(req.getContextPath().length());
             if (url.startsWith("/") && url.length() > 1) {
                 url = url.substring(1);
             }
 //            if (isInclude(url) && licenseService.checkRight()) {
-            if (isInclude(url) && licenseService.checkRight()) {
+            if (licenseService.checkRight(licenseParams.getPollCode())) {
                 chain.doFilter(req, res);
             } else {
                 unauthorized(res, "Authorization invalid license");

@@ -14,7 +14,7 @@ public class LicenseParams {
 
     private String product = "WEDS";
 
-    private String pubKey = "111MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC804QTGLVhpBTMNZICjbc0I0j0VlCUsca5uKsTjdrokN0Crbz0G78MzU6tQ6oAiP1cOCh5opujMvjx5MjodWy6rhp/XnIZ92jsiimcOJGaQHXIc4gnPQfkPoz0mpSCRijvrdMpvRCssqaGT+7M5M9AKpAd6CGxvTc0gsvtOnnHBQIDAQAB";
+    private String pubKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC804QTGLVhpBTMNZICjbc0I0j0VlCUsca5uKsTjdrokN0Crbz0G78MzU6tQ6oAiP1cOCh5opujMvjx5MjodWy6rhp/XnIZ92jsiimcOJGaQHXIc4gnPQfkPoz0mpSCRijvrdMpvRCssqaGT+7M5M9AKpAd6CGxvTc0gsvtOnnHBQIDAQAB";
 
     private String pollCode;
 
