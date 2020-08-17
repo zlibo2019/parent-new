@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.weds.web.comm.mapper.CommProcMapper">
+    <resultMap id="0" type="java.util.HashMap"/>
+    <resultMap id="1" type="java.util.HashMap"/>
+    <resultMap id="2" type="java.util.HashMap"/>
+    <resultMap id="3" type="java.util.HashMap"/>
+    <resultMap id="4" type="java.util.HashMap"/>
+    <resultMap id="5" type="java.util.HashMap"/>
+    <resultMap id="6" type="java.util.HashMap"/>
+    <resultMap id="7" type="java.util.HashMap"/>
+    <resultMap id="8" type="java.util.HashMap"/>
+    <resultMap id="9" type="java.util.HashMap"/>
+    <!-- 调用存储过程映射查询结果集（结果集返回个数有上限） -->
+    <select id="loadProcData" statementType="CALLABLE"
+            parameterType="java.util.HashMap" resultType="HashMap">
+        {CALL ${procName} (
+        <if test="params != null">
+            <foreach collection="params" item="param" separator=",">
+                #{param, mode=IN}
+            </foreach>
+        </if>
+        <if test="outs != null">
+            <![CDATA[,]]>
+            <foreach collection="outs" item="out" separator="," index="idx">
+                #{${out}, mode=OUT, jdbcType=OTHER, javaType=java.sql.ResultSet, resultMap=${idx}}
+            </foreach>
+        </if>
+        )}
+    </select>
+</mapper>

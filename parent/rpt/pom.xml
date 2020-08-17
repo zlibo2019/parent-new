@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>rpt</artifactId>
+    <version>0.0.7-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>rpt</name>
+    <description>Extension project for Spring Boot</description>
+
+    <parent>
+        <groupId>com.weds</groupId>
+        <artifactId>parent</artifactId>
+        <version>0.0.7-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <jasperreports.version>6.0.0</jasperreports.version>
+    </properties>
+
+    <dependencies>
+        <!-- 平台框架 -->
+        <dependency>
+            <groupId>com.weds</groupId>
+            <artifactId>bean</artifactId>
+        </dependency>
+
+        <!-- jasperreports Start -->
+        <!-- 该包的作用完成ireport中Preview按扭功能。通过该包可以通过java来ireport生成摸班（.jrxml或.jasper)填充数据源并导出pdf,excel,html等格式文件 -->
+        <dependency>
+            <groupId>net.sf.jasperreports</groupId>
+            <artifactId>jasperreports</artifactId>
+            <version>${jasperreports.version}</version>
+        </dependency>
+        <dependency>
+            <!-- 生成pdf所依赖的包 -->
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itextpdf</artifactId>
+            <version>5.5.11</version>
+        </dependency>
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itext-pdfa</artifactId>
+            <version>5.5.11</version>
+        </dependency>
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itext-asian</artifactId>
+            <version>5.2.0</version>
+        </dependency>
+        <!--将.jrxml编译成.jasper.如果你不使用java编译，而使用ireport工具编译则无须导入该 包  -->
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>2.4.13</version>
+        </dependency>
+        <!-- jasperreports End -->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+</project>

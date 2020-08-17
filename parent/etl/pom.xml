@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>etl</artifactId>
+    <version>0.0.7-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>etl</name>
+    <description>etl project for Spring Boot</description>
+
+    <parent>
+        <groupId>com.weds</groupId>
+        <artifactId>parent</artifactId>
+        <version>0.0.7-SNAPSHOT</version>
+    </parent>
+
+    <properties>
+        <quartz.version>2.3.0</quartz.version>
+        <!--<spring.version>4.3.12.RELEASE</spring.version>-->
+        <spring.version>5.2.1.RELEASE</spring.version>
+    </properties>
+
+    <dependencies>
+        <!-- 平台框架 -->
+        <dependency>
+            <groupId>com.weds</groupId>
+            <artifactId>bean</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.quartz-scheduler</groupId>
+            <artifactId>quartz</artifactId>
+            <version>${quartz.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
+</project>

@@ -1,0 +1,6 @@
+<kmodule xmlns="http://jboss.org/kie/6.0.0/kmodule">
+    <!--起步价-->
+    <kbase name="baseprice" packages="rules">
+        <ksession name="ksession-baseprice"/>
+    </kbase>
+</kmodule>

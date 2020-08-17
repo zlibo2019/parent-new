@@ -1,0 +1,16 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.weds.bean.base.BaseConfig
+#  com.weds.bean.utils.UtilsConfig,\
+#  com.weds.bean.socket.SocketConfig,\
+#  com.weds.bean.logs.LogConfig,\
+#  com.weds.bean.jwt.JwtConfig,\
+#  com.weds.bean.fastdfs.FastDFSConfig,\
+#  com.weds.bean.exception.ExceptionConfig,\
+#  com.weds.bean.websocket.WebSocketConfig,\
+#  com.weds.bean.locale.LocaleConfig,\
+#  com.weds.bean.http.HttpConfig,\
+#  com.weds.bean.swagger.SwaggerConfig,\
+#  com.weds.bean.datasource.DruidConfig,\
+#  com.weds.bean.datasource.multiple.MyBatisConfig,\
+#  com.weds.bean.datasource.multiple.TransactionManagerConfig
+#  com.weds.bean.websocket.stomp.WebSocketBrokerConfig
